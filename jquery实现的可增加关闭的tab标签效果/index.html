@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+    <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts-en.common.js"></script>
+
+    <style>
+        /*.uls {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: left;
+        }
+
+        .uls li {
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .box {
+            border: 1px solid #f00;
+            width: 1000px;
+            height: 500px;
+            margin-top: 50px;
+        }
+
+        .box div {
+            display: none;
+        }
+
+        .active {
+            display: block!important;
+        }
+
+        .on {
+            background: #333;
+            color: #fff;
+        }*/
+        /*.nav {
+         margin: 0 auto;
+         border:1px solid #f00;
+         height: 50px;
+         width: 1200px;
+         clear: both;
+        }
+
+        .left {
+            width: 200px;
+            height: 50px;
+            background: red;
+            position: relative;
+             float: left;
+        }
+
+        .center {
+            width: 200px;
+            height: 50px;
+            background: black;
+             float: left;
+        }
+
+        .right {
+            width: 200px;
+            height: 50px;
+            background: lightblue;
+          
+             float: right;    
+        }
+
+        .tw {
+            width: 100px;
+            background: green;
+            position: absolute;
+            top: 10px;
+            left: 0;
+        }
+
+        .ze {
+            width: 100px;
+            background: grey;
+           
+         
+        }*/
+        /*body {
+            background: #111;
+            color: whitesmoke;
+        }
+
+        .timeline {
+            list-style-type: none;
+            display: -moz-box;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -moz-box-align: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            -moz-box-pack: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            /*for ie9*/
+        /*justify-content: center;
+            margin: 58px auto 0;
+            
+        }
+
+        .timeline li {
+            display: table-cell;
+        }
+
+  
+        .status {
+            padding: 0px 35px;         
+            border-top: 2px solid #e9cd11;
+            position: relative;
+            transition: all 200ms ease-in;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .status:before {
+            content: "";
+            width: 14px;
+            height: 14px;
+            background-color: #e9cd11;
+            border-radius: 14px;
+            border: 3px solid #291b01;
+            position: absolute;
+            top: -10px;
+            left: 42%;
+            transition: all 200ms ease-in;
+        }
+
+        h3 {
+            text-align: center;
+            color: orange;
+        }*/
+    </style>
+
+</head>
+
+<body>
+
+    <div class="div" style="width:100px;height:100px;background:#000">
+        <div class="hx" style="display:none;float:left;margin-left:30px;background:blue">1</div>
+    </div>
+    <div class="div" style="width:100px;height:100px;background:#f00">
+         <div class="dsf" style="display:none">1</div>
+    </div>
+
+
+    <script>
+       var d=$(".div");
+     $.each(d,function(index,element){
+      $(this).click(function(){
+         if(index==0){
+              $(".hx").show();
+         }else{
+                $(".dsf").show();
+         }
+          
+         
+      })
+
+     })
+           
+     
+        
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<div id="flow1" class="flow">
+        <h3>参与流程</h3>
+        <ul class="timeline" id="timeline">
+            <li class="li complete">
+                <div class="status">
+                    <h4>注册</h4>
+                </div>
+            </li>
+            <li class="li complete">
+                <div class="status">
+                    <h4>添加公众账号</h4>
+                </div>
+            </li>
+            <li class="li complete">
+                <div class="status">
+                    <h4>扫二维码抽奖</h4>
+                </div>
+            </li>
+        </ul>
+    </div>-->
+
+    <!--<div class="nav">
+        <div class="left">
+            <div class="tw">sdf</div>
+        </div>
+        <div class="center"></div>
+        <div class="right">
+            <div class="ze">sdf</div>
+        </div>
+    </div>-->
+    <!--<ul class="uls">
+        <li class="on">学校核心数据</li>
+        <li>专业核心数据</li>
+        <li>教师核心数据</li>
+        <li>学生核心数据</li>
+    </ul>-->
+
+    <!--<div class="box">
+        <div class="active">内容1</div>
+        <div>内容2</div>
+        <div>内容3</div>
+        <div>内容4</div>
+    </div>
+
+    <select class="dd">
+        <option >成都</option>
+         <option >乐山</option>
+          <option >绵阳</option>
+    </select>
+
+    <button onclick="show()">点击</button>-->
+    <!--
+    <div style="width:100%;border:1px solid #f00">
+        <img src="2.jpg" style="width:100%; height:100%">
+    </div>-->
+
+
+</body>
+
+
+<script>
+    // 基于准备好的dom，初始化echarts实例
+        // var myChart = echarts.init(document.getElementById('main'));
+
+        // // 指定图表的配置项和数据
+        // var option = {
+        //     title: {
+        //         text: 'ECharts 入门示例'
+        //     },
+        //     tooltip: {},
+
+        //     xAxis: {
+        //         data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+        //     },
+        //     subtextStyle:{
+        //         color:'#000'
+        //     },
+        //     yAxis: {},
+        //     series: [{
+        //         name: '销量',
+        //         type: 'bar',
+        //         data: [5, 20, 36, 10, 10, 20]
+        //     }]
+        // };
+        // // 使用刚指定的配置项和数据显示图表。
+        // myChart.setOption(option);
+
+
+
+//   var obj = [1,2,3,4];
+//  obj.forEach(function(element,index,arr) {
+//       console.log(element)
+//        console.log(index)
+//         console.log(arr)
+//   });
+
+
+//     $(function(){
+
+//         var i = 0;
+//         var canmove = true;
+//         $(".uls>li").click(function () {
+//             var i = $(this).index()
+//             $(this).addClass("on");
+//             $(this).siblings().removeClass("on");
+//             $(".box div").eq(i).addClass("active");
+//             $(".box div").eq(i).siblings().removeClass("active");
+//         })
+
+//         $(".box").mouseenter(function () {//只要用户鼠标在这个tab1区域内，就不自动跳转
+//             canmove = false;
+//         }).mouseleave(function () {
+//             clearInterval(li_timer);
+//             setTimeout(function () { canmove = true; }, 1000);//两秒后自动切换
+//         });
+
+//         function li_timer() {
+//                 i++;
+//                 if (i == $(".uls>li").length) {
+//                     i = 0;
+//                 }
+//                 $('.uls li').eq(i).addClass('on').siblings().removeClass('on');
+//                 $('.box div').eq(i).addClass('active').siblings().removeClass("active");
+
+//         }
+//         setInterval(li_timer, 1000)
+//     // })
+
+</script>
+
+</html>

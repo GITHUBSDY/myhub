@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+    <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts-en.common.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script>
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data: ['销量']
+            },
+            dataZoom: [{
+                type: 'slider',
+                handleIcon: "M 100, 100 m -75, 0 a75,75 0 1,0 150,0 a75,75 0 1,0 -150,0",
+                handleSize:'140%',
+                height:14,
+                handleStyle: { /*手柄的样式*/
+                    color: "#a0b0c6",
+                    borderColor: "#a0b0c6",
+                },
+                backgroundColor: "#ddd", /*背景 */
+                dataBackground: { /*数据背景*/
+                    lineStyle: {
+                        color: "#ddd"
+                    },
+                    areaStyle: {
+                        color: "#ddd"
+                    }
+                },
+                 fillerColor:"rgba(198,204,213,1)",
+            }],
+            xAxis: {
+                data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>
